@@ -4,7 +4,7 @@ import base64
 import json
 
 
-class test_catalog_sections(test_base.test_base):
+class TestCatalogSections(test_base.TestBase):
     path = "/catalog/sections?seo_sections=получение_разделов_фильтров"
     sections = None
 

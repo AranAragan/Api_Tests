@@ -2,5 +2,5 @@ from tests import test_base
 import requests
 
 
-class test_register_fields(test_base.test_base):
+class TestRegisterFields(test_base.TestBase):
     path = "/register/fields"

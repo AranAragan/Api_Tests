@@ -2,5 +2,5 @@ from tests import test_base
 import requests
 
 
-class test_home_screen(test_base.test_base):
+class TestHomeScreen(test_base.TestBase):
     path = "/snippets/main"

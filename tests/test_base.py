@@ -1,7 +1,8 @@
 import requests
+import pytest_check
 
 
-class test_base:
+class TestBase:
     environment_adapter = None
     environment = None
     response = None
@@ -25,6 +26,10 @@ class test_base:
 
     def print_json_response(self):
         print(self.response.json())
+
+    def test(self):
+        assert self.response.status_code == 200
+        return self
 
     def rewrite_token(self):
         self.environment_adapter.set_token(self.get_json()).write()

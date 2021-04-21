@@ -2,5 +2,5 @@ from tests import test_base
 import requests
 
 
-class test_catalog_products_viewed(test_base.test_base):
+class TestCatalogProductsViewed(test_base.TestBase):
     path = "/catalog/products/viewed"

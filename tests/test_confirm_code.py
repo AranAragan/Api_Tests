@@ -2,5 +2,5 @@ from tests import test_base
 import requests
 
 
-class test_confirm_code(test_base.test_base):
+class TestConfirmCode(test_base.TestBase):
     path = "/register/code/check/111111"
