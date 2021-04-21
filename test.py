@@ -16,6 +16,8 @@ from tests import test_favorite_product_del
 from tests import test_favorite_product_all_del
 from tests import test_catalog_products_viewed
 from tests import test_review_product
+from tests import test_question
+from tests import test_favorite_list
 from environment import yaml_environment
 import allure
 
@@ -108,6 +110,12 @@ class Test():
         test_favorite_product_all_del.TestFavoriteProductAllDel(
             self.environment_adapter).request().test()
 
+    @allure.title("Список избранных")
+    @allure.description("Список избранных")
+    def test_favorite_list(self):
+        test_favorite_list.TestFavoriteList(
+            self.environment_adapter).request().test()
+
     @allure.title("Получение главного экрана")
     @allure.description("Получение главного экрана")
     def test_home_screen(self):
@@ -124,6 +132,12 @@ class Test():
     @allure.description("Добавить отзыв")
     def test_review_product(self):
         test_review_product.TestReviewProduct(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить вопрос")
+    @allure.description("Добавить вопрос")
+    def test_question(self):
+        test_question.TestQuetion(
             self.environment_adapter).request().test()
 
     # @allure.title("Разделы каталога")
