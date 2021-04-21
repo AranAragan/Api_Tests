@@ -1,5 +1,4 @@
 import requests
-import pytest_check
 
 
 class TestBase:
