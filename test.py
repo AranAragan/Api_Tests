@@ -10,6 +10,8 @@ from tests import test_recover_change
 from tests import test_user_verify_email
 from tests import test_personal_area
 from tests import test_change_personal_data_user
+from tests import test_favorite_product
+from tests import test_favorite_product_del
 from tests import test_catalog_products_viewed
 from environment import yaml_environment
 import allure
@@ -78,6 +80,18 @@ class Test():
     def test_personal_area(self):
         test_personal_area.TestPersonalArea(
             self.environment_adapter).request().rewrite_token().test()
+
+    @allure.title("Добавить в избранное")
+    @allure.description("Добавить в избранное")
+    def test_favorite_product(self):
+        test_favorite_product.TestFavoriteProduct(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удаление из избранного")
+    @allure.description("Удаление из избранного")
+    def test_favorite_product_del(self):
+        test_favorite_product_del.TestFavoriteProductDel(
+            self.environment_adapter).request().test()
 
     @allure.title("Получение главного экрана")
     @allure.description("Получение главного экрана")
