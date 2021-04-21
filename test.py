@@ -11,8 +11,11 @@ from tests import test_user_verify_email
 from tests import test_personal_area
 from tests import test_change_personal_data_user
 from tests import test_favorite_product
+from tests import test_favorite_product_double
 from tests import test_favorite_product_del
+from tests import test_favorite_product_all_del
 from tests import test_catalog_products_viewed
+from tests import test_review_product
 from environment import yaml_environment
 import allure
 
@@ -87,10 +90,22 @@ class Test():
         test_favorite_product.TestFavoriteProduct(
             self.environment_adapter).request().test()
 
+    @allure.title("Добавить в избранное дубль")
+    @allure.description("Добавить в избранное дубль")
+    def test_favorite_product_double(self):
+        test_favorite_product_double.TestFavoriteProductDouble(
+            self.environment_adapter).request().test()
+
     @allure.title("Удаление из избранного")
     @allure.description("Удаление из избранного")
     def test_favorite_product_del(self):
         test_favorite_product_del.TestFavoriteProductDel(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить все из избранного")
+    @allure.description("Удалить все из избранного")
+    def test_favorite_product_all_del(self):
+        test_favorite_product_all_del.TestFavoriteProductAllDel(
             self.environment_adapter).request().test()
 
     @allure.title("Получение главного экрана")
@@ -103,6 +118,12 @@ class Test():
     @allure.description("Получение просмотренных товаров")
     def test_catalog_products_viewed(self):
         test_catalog_products_viewed.TestCatalogProductsViewed(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить отзыв")
+    @allure.description("Добавить отзыв")
+    def test_review_product(self):
+        test_review_product.TestReviewProduct(
             self.environment_adapter).request().test()
 
     # @allure.title("Разделы каталога")
