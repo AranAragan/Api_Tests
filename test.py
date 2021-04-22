@@ -30,6 +30,16 @@ from tests import test_catalog_banners
 from tests import test_catalog_paths
 from tests import test_user_orders
 from tests import test_user_exist
+from tests import test_oauth_token
+from tests import test_get_basket
+from tests import test_quantity_basket
+from tests import test_order_payment
+from tests import test_order_delivery
+from tests import test_order_gifts
+from tests import test_order_coupon
+from tests import test_del_order_coupon
+from tests import test_del_basket_productid
+from tests import test_del_basket_all
 from environment import yaml_environment
 import allure
 
@@ -216,6 +226,66 @@ class Test():
     @allure.description("Проверка существования Пользователя")
     def test_user_exist(self):
         test_user_exist.TestUserExist(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить информацию о токене")
+    @allure.description("Получить информацию о токене")
+    def test_oauth_token(self):
+        test_oauth_token.TestOauthToken(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить корзину")
+    @allure.description("Получить корзину")
+    def test_get_basket(self):
+        test_get_basket.TestGetBasket(
+            self.environment_adapter).request().test()
+
+    @allure.title("Установить количество товара в коризне")
+    @allure.description("Установить количество товара в коризне")
+    def test_quantity_basket(self):
+        test_quantity_basket.TestQuantityBasket(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить способы оплаты")
+    @allure.description("Получить способы оплаты")
+    def test_order_payment(self):
+        test_order_payment.TestOrderPayment(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить данные доставки")
+    @allure.description("Получить данные доставки")
+    def test_order_delivery(self):
+        test_order_delivery.TestOrderDelivery(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить подарки")
+    @allure.description("Получить подарки")
+    def test_order_gifts(self):
+        test_order_gifts.TestOrderGifts(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить промокод")
+    @allure.description("Добавить промокод")
+    def test_order_coupon(self):
+        test_order_coupon.TestOrderCoupon(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить промокод")
+    @allure.description("Удалить промокод")
+    def test_del_order_coupon(self):
+        test_del_order_coupon.TestDelOrderCoupon(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить товар из корзины")
+    @allure.description("Удалить товар из корзины")
+    def test_del_basket_productid(self):
+        test_del_basket_productid.TestDelBasketProductId(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить товар из корзины")
+    @allure.description("Удалить товар из корзины")
+    def test_del_basket_all(self):
+        test_del_basket_all.TestDelBasketAll(
             self.environment_adapter).request().test()
 
     # @allure.title("Удаление пользователя")
