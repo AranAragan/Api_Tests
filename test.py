@@ -40,6 +40,8 @@ from tests import test_order_coupon
 from tests import test_del_order_coupon
 from tests import test_del_basket_productid
 from tests import test_del_basket_all
+from tests import test_locations_current
+from tests import test_set_location
 from environment import yaml_environment
 import allure
 
@@ -282,17 +284,29 @@ class Test():
         test_del_basket_productid.TestDelBasketProductId(
             self.environment_adapter).request().test()
 
-    @allure.title("Удалить товар из корзины")
-    @allure.description("Удалить товар из корзины")
+    @allure.title("Удалить все товары из корзины")
+    @allure.description("Удалить все товары из корзины")
     def test_del_basket_all(self):
         test_del_basket_all.TestDelBasketAll(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить текущее местоположение")
+    @allure.description("Получить текущее местоположение")
+    def test_locations_current(self):
+        test_locations_current.TestLocationsCurrent(
+            self.environment_adapter).request().test()
+
+    @allure.title("Установить местоположение")
+    @allure.description("Установить местоположение")
+    def test_set_location(self):
+        test_set_location.TestSetLocation(
             self.environment_adapter).request().test()
 
     # @allure.title("Удаление пользователя")
     # @allure.description("Удаление пользователя")
     # def test_delete_user(self):
-        # test_delete_user.TestDeleteUser(
-        # self.environment_adapter).request().test()
+        # print(test_delete_user.TestDeleteUser(
+        # self.environment_adapter).request().test())
 
     # @allure.title("Разделы каталога")
     # @allure.description("Разделы каталога")
