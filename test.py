@@ -18,6 +18,18 @@ from tests import test_catalog_products_viewed
 from tests import test_review_product
 from tests import test_question
 from tests import test_favorite_list
+from tests import test_product_card
+from tests import test_products_viewed
+from tests import test_delete_user
+from tests import test_catalog_categories
+from tests import test_sliders
+from tests import test_vue_catalog
+from tests import test_catalog
+from tests import test_catalog_panel
+from tests import test_catalog_banners
+from tests import test_catalog_paths
+from tests import test_user_orders
+from tests import test_user_exist
 from environment import yaml_environment
 import allure
 
@@ -140,8 +152,80 @@ class Test():
         test_question.TestQuetion(
             self.environment_adapter).request().test()
 
+    @allure.title("Карточка товара")
+    @allure.description("Карточка товара")
+    def test_product_card(self):
+        test_product_card.TestProductCard(
+            self.environment_adapter).request().test()
+
+    @allure.title("Просмотренные товары")
+    @allure.description("Просмотренные товары")
+    def test_products_viewed(self):
+        test_products_viewed.TestProductViewed(
+            self.environment_adapter).request().test()
+
+    @allure.title("Список категорий")
+    @allure.description("Список категорий")
+    def test_catalog_categories(self):
+        test_catalog_categories.TestCatalogCategories(
+            self.environment_adapter).request().test()
+
+    @allure.title("Слайдеры")
+    @allure.description("Слайдеры")
+    def test_sliders(self):
+        test_sliders.TestSliders(
+            self.environment_adapter).request().test()
+
+    @allure.title("Vue каталог")
+    @allure.description("Vue каталог")
+    def test_vue_catalog(self):
+        test_vue_catalog.TestVueCatalog(
+            self.environment_adapter).request().test()
+
+    @allure.title("Каталог")
+    @allure.description("Каталог")
+    def test_catalog(self):
+        test_catalog.TestCatalog(
+            self.environment_adapter).request().test()
+
+    @allure.title("Панель каталога")
+    @allure.description("Панель каталога")
+    def test_catalog_panel(self):
+        test_catalog_panel.TestCatalogPanel(
+            self.environment_adapter).request().test()
+
+    @allure.title("Список баннеров")
+    @allure.description("Список баннеров")
+    def test_catalog_banners(self):
+        test_catalog_banners.TestCatalogBanners(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить все ссылки")
+    @allure.description("Получить все ссылки")
+    def test_catalog_paths(self):
+        test_catalog_paths.TestCatalogPaths(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить заказы")
+    @allure.description("Получить заказы")
+    def test_user_orders(self):
+        test_user_orders.TestUserOrders(
+            self.environment_adapter).request().test()
+
+    @allure.title("Проверка существования Пользователя")
+    @allure.description("Проверка существования Пользователя")
+    def test_user_exist(self):
+        test_user_exist.TestUserExist(
+            self.environment_adapter).request().test()
+
+    # @allure.title("Удаление пользователя")
+    # @allure.description("Удаление пользователя")
+    # def test_delete_user(self):
+        # test_delete_user.TestDeleteUser(
+        # self.environment_adapter).request().test()
+
     # @allure.title("Разделы каталога")
     # @allure.description("Разделы каталога")
     # def test_catalog_sections(self):
-    #     test_catalog_sections.TestCatalogSections(
-    #         self.environment_adapter).request().print_json_response()
+        # test_catalog_sections.TestCatalogSections(
+        # self.environment_adapter).request().print_json_response()
