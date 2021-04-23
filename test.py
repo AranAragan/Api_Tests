@@ -42,6 +42,16 @@ from tests import test_del_basket_productid
 from tests import test_del_basket_all
 from tests import test_locations_current
 from tests import test_set_location
+from tests import test_location
+from tests import test_complaint
+from tests import test_search_phrases
+from tests import test_search_hints
+from tests import test_installment
+from tests import test_feedbacks
+from tests import test_feedback_request
+from tests import test_found_cheaper
+from tests import test_feedbacks_paragraphs
+from tests import test_reg_bonus
 from environment import yaml_environment
 import allure
 
@@ -300,6 +310,66 @@ class Test():
     @allure.description("Установить местоположение")
     def test_set_location(self):
         test_set_location.TestSetLocation(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить местоположения")
+    @allure.description("Получить местоположения")
+    def test_location(self):
+        test_location.TestLocations(
+            self.environment_adapter).request().test()
+
+    @allure.title("Отправить жалобу")
+    @allure.description("Отправить жалобу")
+    def test_complaint(self):
+        test_complaint.TestComplaint(
+            self.environment_adapter).request().test()
+
+    @allure.title("Популярные поисковые фразы")
+    @allure.description("Популярные поисковые фразы")
+    def test_search_phrases(self):
+        test_search_phrases.TestSearchPhrases(
+            self.environment_adapter).request().test()
+
+    @allure.title("Поисковик подсказки")
+    @allure.description("Поисковик подсказки")
+    def test_search_hints(self):
+        test_search_hints.TestSearchHints(
+            self.environment_adapter).request().test()
+
+    @allure.title("Калькулятор рассрочки")
+    @allure.description("Калькулятор рассрочки")
+    def test_installment(self):
+        test_installment.TestInstallment(
+            self.environment_adapter).request().test()
+
+    @allure.title("Нашли ошибку?")
+    @allure.description("Нашли ошибку?")
+    def test_feedbacks(self):
+        test_feedbacks.TestFeedbacks(
+            self.environment_adapter).request().test()
+
+    @allure.title("Запрос обратной связи")
+    @allure.description("Запрос обратной связи")
+    def test_feedback_request(self):
+        test_feedback_request.TestFeedbacksRequest(
+            self.environment_adapter).request().test()
+
+    @allure.title("Нашли дешевле?")
+    @allure.description("Нашли дешевле?")
+    def test_found_cheaper(self):
+        test_found_cheaper.TestFoundCheaper(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить пункты")
+    @allure.description("Получить пункты")
+    def test_feedbacks_paragraphs(self):
+        test_feedbacks_paragraphs.TestFeedbackParagraphs(
+            self.environment_adapter).request().test()
+
+    @allure.title("Зарегистрировать бонусную карту")
+    @allure.description("Зарегистрировать бонусную карту")
+    def test_reg_bonus(self):
+        test_reg_bonus.TestRegBonus(
             self.environment_adapter).request().test()
 
     # @allure.title("Удаление пользователя")
