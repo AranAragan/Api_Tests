@@ -52,6 +52,22 @@ from tests import test_feedback_request
 from tests import test_found_cheaper
 from tests import test_feedbacks_paragraphs
 from tests import test_reg_bonus
+from tests import test_bonus_info
+from tests import test_bonus_fields
+from tests import test_bonus_code_send
+from tests import test_brand
+from tests import test_compare
+from tests import test_del_compare
+from tests import test_del_compare_section
+from tests import test_compare_products
+from tests import test_compare_struct
+from tests import test_compare_sections
+from tests import test_compare_all_products
+from tests import test_subscribe_device
+from tests import test_unsubscribe
+from tests import test_push_events
+from tests import test_del_push
+from tests import test_events_viewed
 from environment import yaml_environment
 import allure
 
@@ -370,6 +386,115 @@ class Test():
     @allure.description("Зарегистрировать бонусную карту")
     def test_reg_bonus(self):
         test_reg_bonus.TestRegBonus(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить информацию о бонусной карте")
+    @allure.description("Получить информацию о бонусной карте")
+    def test_bonus_info(self):
+        test_bonus_info.TestBonusInfo(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить поля о бонусной карте")
+    @allure.description("Получить поля о бонусной карте")
+    def test_bonus_fields(self):
+        test_bonus_fields.TestBonusFields(
+            self.environment_adapter).request().test()
+
+    @allure.title("Отправить код Бонустная карта")
+    @allure.description("Отправить код Бонусная карта")
+    def test_bonus_code_send(self):
+        test_bonus_code_send.TestBonusCodeSend(
+            self.environment_adapter).request().test()
+
+    @allure.title("Отправить код Бонустная карта")
+    @allure.description("Отправить код Бонусная карта")
+    @allure.severity("Minor")
+    def test_brand(self):
+        test_brand.TestBrand(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить товар - Сравнение")
+    @allure.description("Добавить товар - Сравнение")
+    @allure.severity("Minor")
+    def test_compare(self):
+        test_compare.TestCompare(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить товар - Сравнение")
+    @allure.description("Удалить товар - Сравнение")
+    @allure.severity("Minor")
+    def test_del_compare(self):
+        test_del_compare.TestDelCompare(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить раздел - Сравнение")
+    @allure.description("Удалить раздел - Сравнение")
+    @allure.severity("Minor")
+    def test_del_compare_section(self):
+        test_del_compare_section.TestDelCompareSection(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить товары - Сравнение")
+    @allure.description("Удалить товары - Сравнение")
+    @allure.severity("Minor")
+    def test_compare_products(self):
+        test_compare_products.TestDelCompareProducts(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить структуру - Сравнение")
+    @allure.description("Получить структуру - Сравнение")
+    @allure.severity("trivial")
+    def test_compare_struct(self):
+        test_compare_struct.TestCompareStruct(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить список разделов - Сравнение")
+    @allure.description("Получить список разделов - Сравнение")
+    @allure.severity("Minor")
+    def test_compare_sections(self):
+        test_compare_sections.TestCompareSections(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить все товары - Сравнение")
+    @allure.description("Получить все товары - Сравнение")
+    @allure.severity("Minor")
+    def test_compare_all_products(self):
+        test_compare_all_products.TestCompareAllProducts(
+            self.environment_adapter).request().test()
+
+    @allure.title("Подписаться")
+    @allure.description("Подписаться")
+    @allure.severity("Critical")
+    def test_subscribe_device(self):
+        test_subscribe_device.TestSubscribeDevice(
+            self.environment_adapter).request().test()
+
+    @allure.title("Отменить подписку")
+    @allure.description("Отменить подписку")
+    @allure.severity("Minor")
+    def test_unsubscribe(self):
+        test_unsubscribe.TestUnsubscribe(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить список")
+    @allure.description("Получить список")
+    @allure.severity("Minor")
+    def test_push_events(self):
+        test_push_events.TestPushEvents(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удалить PUSH")
+    @allure.description("Удалить PUSH")
+    @allure.severity("Minor")
+    def test_del_push(self):
+        test_del_push.TestDelPush(
+            self.environment_adapter).request().test()
+
+    @allure.title("Установить статус просмотра")
+    @allure.description("Установить статус просмотра")
+    @allure.severity("Minor")
+    def test_events_viewed(self):
+        test_events_viewed.TestEventsViewed(
             self.environment_adapter).request().test()
 
     # @allure.title("Удаление пользователя")
