@@ -68,6 +68,23 @@ from tests import test_unsubscribe
 from tests import test_push_events
 from tests import test_del_push
 from tests import test_events_viewed
+from tests import test_order_basket
+from tests import test_order_create
+from tests import test_order_basket_double
+from tests import test_rec_order_creation
+from tests import test_order_oneclick
+from tests import test_add_review
+from tests import test_add_question
+from tests import test_favorite
+from tests import test_search
+from tests import test_vacancy
+from tests import test_wholesaler
+from tests import test_provider
+from tests import test_support_stores
+from tests import test_support_information
+from tests import test_brand_populars
+from tests import test_brand_groupped
+from tests import test_bonus_physical
 from environment import yaml_environment
 import allure
 
@@ -96,12 +113,14 @@ class Test():
 
     @allure.title("Регистрация пользователя")
     @allure.description("Регистрация пользователя")
+    @allure.severity("Blocker")
     def test_register_user(self):
         test_register_user.TestRegisterUser(
             self.environment_adapter).request().rewrite_token().test()
 
     @allure.title("Восстановление пароля")
     @allure.description("Восстановление пароля")
+    @allure.severity("Blocker")
     def test_auth_user(self):
         test_auth_user.TestAuthUser(
             self.environment_adapter).request().rewrite_token().test()
@@ -282,6 +301,7 @@ class Test():
 
     @allure.title("Получить данные доставки")
     @allure.description("Получить данные доставки")
+    @allure.severity("Blocker")
     def test_order_delivery(self):
         test_order_delivery.TestOrderDelivery(
             self.environment_adapter).request().test()
@@ -402,6 +422,7 @@ class Test():
 
     @allure.title("Отправить код Бонустная карта")
     @allure.description("Отправить код Бонусная карта")
+    @allure.severity("Minor")
     def test_bonus_code_send(self):
         test_bonus_code_send.TestBonusCodeSend(
             self.environment_adapter).request().test()
@@ -443,7 +464,7 @@ class Test():
 
     @allure.title("Получить структуру - Сравнение")
     @allure.description("Получить структуру - Сравнение")
-    @allure.severity("trivial")
+    @allure.severity("Trivial")
     def test_compare_struct(self):
         test_compare_struct.TestCompareStruct(
             self.environment_adapter).request().test()
@@ -497,11 +518,131 @@ class Test():
         test_events_viewed.TestEventsViewed(
             self.environment_adapter).request().test()
 
-    # @allure.title("Удаление пользователя")
-    # @allure.description("Удаление пользователя")
-    # def test_delete_user(self):
-        # print(test_delete_user.TestDeleteUser(
-        # self.environment_adapter).request().test())
+    @allure.title("Установить количество товара в коризне - Заказ")
+    @allure.description("Установить количество товара в коризне - Заказ")
+    @allure.severity("Minor")
+    def test_order_basket(self):
+        test_order_basket.TestOrderBasket(
+            self.environment_adapter).request().test()
+
+    @allure.title("Сделать заказ")
+    @allure.description("Сделать заказ")
+    @allure.severity("Blocker")
+    def test_order_create(self):
+        test_order_create.TestOrderCreate(
+            self.environment_adapter).request().test()
+
+    @allure.title("Установить количество товара в коризне - Заказ - Дубль")
+    @allure.description("Установить количество товара в коризне - Заказ - Дубль")
+    @allure.severity("Blocker")
+    def test_order_basket_double(self):
+        test_order_basket_double.TestOrderBasketDouble(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить данные для создания заказа")
+    @allure.description("Получить данные для создания заказа")
+    @allure.severity("Minor")
+    def test_rec_order_creation(self):
+        test_rec_order_creation.TestRecOrderCreation(
+            self.environment_adapter).request().test()
+
+    @allure.title("Купить в один клик")
+    @allure.description("Купить в один клик")
+    @allure.severity("Blocker")
+    def test_order_oneclick(self):
+        test_order_oneclick.TestOrderOneclick(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить отзыв")
+    @allure.description("Добавить отзыв")
+    @allure.severity("Minor")
+    def test_add_review(self):
+        test_add_review.TestAddReview(
+            self.environment_adapter).request().test()
+
+    @allure.title("Добавить вопрос")
+    @allure.description("Добавить вопрос")
+    @allure.severity("Minor")
+    def test_add_question(self):
+        test_add_question.TestAddQuestion(
+            self.environment_adapter).request().test()
+
+    @allure.title("Список избранных")
+    @allure.description("Список избранных")
+    @allure.severity("Minor")
+    def test_favorite(self):
+        test_favorite.TestFavorite(
+            self.environment_adapter).request().test()
+
+    @allure.title("Поиск")
+    @allure.description("Поиск")
+    @allure.severity("Critical")
+    def test_search(self):
+        test_search.TestSearch(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить список Вакансий")
+    @allure.description("Получить список Вакансий")
+    @allure.severity("Minor")
+    def test_vacancy(self):
+        test_vacancy.TestVacancy(
+            self.environment_adapter).request().test()
+
+    @allure.title("Оптовики")
+    @allure.description("Оптовики")
+    @allure.severity("Minor")
+    def test_wholesaler(self):
+        test_wholesaler.TestWholesaler(
+            self.environment_adapter).request().test()
+
+    @allure.title("Поставщики")
+    @allure.description("Поставщики")
+    @allure.severity("Minor")
+    def test_provider(self):
+        test_provider.TestProvider(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить список магазинов")
+    @allure.description("Получить список магазинов")
+    @allure.severity("Minor")
+    def test_support_stores(self):
+        test_support_stores.TestSupportStores(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить общую информацию")
+    @allure.description("Получить общую информацию")
+    @allure.severity("Minor")
+    def test_support_information(self):
+        test_support_information.TestSupportInformation(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить популярные Бренды")
+    @allure.description("Получить популярные Бренды")
+    @allure.severity("Minor")
+    def test_brand_populars(self):
+        test_brand_populars.TestBrandPopulars(
+            self.environment_adapter).request().test()
+
+    @allure.title("Получить сгруппированные Бренды")
+    @allure.description("Получить сгруппированные Бренды")
+    @allure.severity("Minor")
+    def test_brand_groupped(self):
+        test_brand_groupped.TestBrandGroupped(
+            self.environment_adapter).request().test()
+
+    @allure.title("Зарегистрировать физическую бонусную карту")
+    @allure.description("Зарегистрировать физическую бонусную карту")
+    @allure.severity("Minor")
+    def test_bonus_physical(self):
+        test_bonus_physical.TestBonusPhysical(
+            self.environment_adapter).request().test()
+
+    @allure.title("Удаление пользователя")
+    @allure.description("Удаление пользователя")
+    @allure.severity("Critical")
+    def test_delete_user(self):
+        test_delete_user.TestDeleteUser(
+            self.environment_adapter).request().rewrite_token().test()
 
     # @allure.title("Разделы каталога")
     # @allure.description("Разделы каталога")
