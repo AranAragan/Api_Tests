@@ -2,8 +2,8 @@ from tests import test_base
 import requests
 
 
-class TestCompare(test_base.TestBase):
-    path = "/compare/598682"
+class TestQuestionDislikeQuestionId(test_base.TestBase):
+    path = "/question/dislike/1654?show_entity=возврат_объекта"
 
     def request(self):
         self.response = requests.request(

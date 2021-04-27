@@ -2,8 +2,8 @@ from tests import test_base
 import requests
 
 
-class TestCompare(test_base.TestBase):
-    path = "/compare/598682"
+class TestReviewCommentLike(test_base.TestBase):
+    path = "/review/comment/like/608814dec086e100188c7a3a?show_entity=возврат_объекта&parent_entity_id=111"
 
     def request(self):
         self.response = requests.request(
