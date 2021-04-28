@@ -8,7 +8,7 @@ class TestOrderOneclick(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "product_id": "24617",
+                "product_id": "592918",
                 "phone_number": "79996666666"
             })
         return self

@@ -3,7 +3,7 @@ import requests
 
 
 class TestDelBasketProductId(test_base.TestBase):
-    path = "/basket/24617?total=1"
+    path = "/basket/592918?total=1"
 
     def request(self):
         self.response = requests.request(

@@ -14,3 +14,9 @@ class TestOrderCreate(test_base.TestBase):
                 "ORDER_PROP_3": "79996666666"
             })
         return self
+
+    def assert_set_variables(self):
+        self.set_variables([
+            {'ORDER_ID': self.get_json_result()["ID"]}
+        ])
+        return self

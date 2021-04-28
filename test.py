@@ -137,14 +137,14 @@ class Test():
     @allure.severity("Blocker")
     def test_register_user(self):
         test_register_user.TestRegisterUser(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Восстановление пароля")
     @allure.description("Восстановление пароля")
     @allure.severity("Blocker")
     def test_auth_user(self):
         test_auth_user.TestAuthUser(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Проверка кода подтверждения")
     @allure.description("Проверка кода подтверждения")
@@ -156,25 +156,25 @@ class Test():
     @allure.description("Изменить пароль во время восстановления")
     def test_recover_change(self):
         test_recover_change.TestRecoverChange(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Подтвердить электронную почту")
     @allure.description("Подтвердить электронную почту")
     def test_user_verify_email(self):
         test_user_verify_email.TestUserVerifyEmail(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Изменение личных данных пользователя")
     @allure.description("Изменение личных данных пользователя")
     def test_change_personal_data_user(self):
         test_change_personal_data_user.TestChangePersonalDataUser(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Личный кабинет")
     @allure.description("Личный кабинет")
     def test_personal_area(self):
         test_personal_area.TestPersonalArea(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     @allure.title("Добавить в избранное")
     @allure.description("Добавить в избранное")
@@ -551,7 +551,7 @@ class Test():
     @allure.severity("Blocker")
     def test_order_create(self):
         test_order_create.TestOrderCreate(
-            self.environment_adapter).request().test()
+            self.environment_adapter).request().test().assert_set_variables().rewrite_environment()
 
     @allure.title("Установить количество товара в коризне - Заказ - Дубль")
     @allure.description("Установить количество товара в коризне - Заказ - Дубль")
@@ -707,110 +707,110 @@ class Test():
         test_review_fields.TestReviewFields(
             self.environment_adapter).request().test()
 
-    @ allure.title("Нравится - Комментарии")
-    @ allure.description("Нравится - Комментарии")
-    @ allure.severity("Minor")
+    @allure.title("Нравится - Комментарии")
+    @allure.description("Нравится - Комментарии")
+    @allure.severity("Minor")
     def test_review_like(self):
         test_review_like.TestReviewLike(
             self.environment_adapter).request().test()
 
-    @ allure.title("Не нравится - Комментарии")
-    @ allure.description("Не нравится - Комментарии")
-    @ allure.severity("Minor")
+    @allure.title("Не нравится - Комментарии")
+    @allure.description("Не нравится - Комментарии")
+    @allure.severity("Minor")
     def test_review_dislike(self):
         test_review_dislike.TestReviewDislike(
             self.environment_adapter).request().test()
 
-    @ allure.title("Добавить ответ")
-    @ allure.description("Добавить ответ")
-    @ allure.severity("Minor")
+    @allure.title("Добавить ответ")
+    @allure.description("Добавить ответ")
+    @allure.severity("Minor")
     def test_question_answer(self):
         test_question_answer.TestQuestionAnswer(
             self.environment_adapter).request().test()
 
-    @ allure.title("Нравится ответ")
-    @ allure.description("Нравится ответ")
-    @ allure.severity("Minor")
+    @allure.title("Нравится ответ")
+    @allure.description("Нравится ответ")
+    @allure.severity("Minor")
     def test_question_answer_like(self):
         test_question_answer_like.TestQuestionAnswerLike(
             self.environment_adapter).request().test()
 
-    @ allure.title("Не нравится ответ")
-    @ allure.description("Не нравится ответ")
-    @ allure.severity("Minor")
+    @allure.title("Не нравится ответ")
+    @allure.description("Не нравится ответ")
+    @allure.severity("Minor")
     def test_question_answer_dislike(self):
         test_question_answer_dislike.TestQuestionAnswerDislike(
             self.environment_adapter).request().test()
 
-    @ allure.title("Получить ответы - Ответ")
-    @ allure.description("Получить ответы - Ответ")
-    @ allure.severity("Minor")
+    @allure.title("Получить ответы - Ответ")
+    @allure.description("Получить ответы - Ответ")
+    @allure.severity("Minor")
     def test_question_questionId(self):
         test_question_questionId.TestQuestionQuestionId(
             self.environment_adapter).request().test()
 
-    @ allure.title("Получить поля - Вопросы")
-    @ allure.description("Получить поля - Вопросы")
-    @ allure.severity("Minor")
+    @allure.title("Получить поля - Вопросы")
+    @allure.description("Получить поля - Вопросы")
+    @allure.severity("Minor")
     def test_question_answer_fields(self):
         test_question_answer_fields.TestQuestionAnswerFields(
             self.environment_adapter).request().test()
 
-    @ allure.title("Получить вопросы и ответы товара")
-    @ allure.description("Получить вопросы и ответы товара")
-    @ allure.severity("Minor")
+    @allure.title("Получить вопросы и ответы товара")
+    @allure.description("Получить вопросы и ответы товара")
+    @allure.severity("Minor")
     def test_question_productId(self):
         test_question_productId.TestQuestionProductId(
             self.environment_adapter).request().test()
 
-    @ allure.title("Получить поля - Ответы")
-    @ allure.description("Получить поля - Ответы")
-    @ allure.severity("Minor")
+    @allure.title("Получить поля - Ответы")
+    @allure.description("Получить поля - Ответы")
+    @allure.severity("Minor")
     def test_question_fields(self):
         test_question_fields.TestQuestionFields(
             self.environment_adapter).request().test()
 
-    @ allure.title("Нравится Ответ")
-    @ allure.description("Нравится Ответ")
-    @ allure.severity("Minor")
+    @allure.title("Нравится Ответ")
+    @allure.description("Нравится Ответ")
+    @allure.severity("Minor")
     def test_question_like_questionId(self):
         test_question_like_questionId.TestQuestionLikeQuestionId(
             self.environment_adapter).request().test()
 
-    @ allure.title("Не нравится Ответ")
-    @ allure.description("Не нравится Ответ")
-    @ allure.severity("Minor")
+    @allure.title("Не нравится Ответ")
+    @allure.description("Не нравится Ответ")
+    @allure.severity("Minor")
     def test_question_dislike_questionId(self):
         test_question_dislike_questionId.TestQuestionDislikeQuestionId(
             self.environment_adapter).request().test()
 
-    @ allure.title("Рекомендация разработчика")
-    @ allure.description("Рекомендация разработчика")
-    @ allure.severity("Minor")
+    @allure.title("Рекомендация разработчика")
+    @allure.description("Рекомендация разработчика")
+    @allure.severity("Minor")
     def test_recommend_developer(self):
         test_recommend_developer.TestRecommendDeveloper(
             self.environment_adapter).request().test()
 
-    @ allure.title("Вакансии для рекомендации разработчика")
-    @ allure.description("Вакансии для рекомендации разработчика")
-    @ allure.severity("Minor")
+    @allure.title("Вакансии для рекомендации разработчика")
+    @allure.description("Вакансии для рекомендации разработчика")
+    @allure.severity("Minor")
     def test_about_recommend_developer(self):
         test_about_recommend_developer.TestAboutRecomendDeveloper(
             self.environment_adapter).request().test()
 
-    @ allure.title("Получить Вакансию")
-    @ allure.description("Получить Вакансию")
-    @ allure.severity("Minor")
+    @allure.title("Получить Вакансию")
+    @allure.description("Получить Вакансию")
+    @allure.severity("Minor")
     def test_vacancyid(self):
         test_vacancyid.TestVacancyId(
             self.environment_adapter).request().test()
 
-    @ allure.title("Удаление пользователя")
-    @ allure.description("Удаление пользователя")
-    @ allure.severity("Critical")
+    @allure.title("Удаление пользователя")
+    @allure.description("Удаление пользователя")
+    @allure.severity("Critical")
     def test_delete_user(self):
         test_delete_user.TestDeleteUser(
-            self.environment_adapter).request().rewrite_token().test()
+            self.environment_adapter).request().rewrite_token().rewrite_environment().test()
 
     # @allure.title("Разделы каталога")
     # @allure.description("Разделы каталога")
