@@ -105,6 +105,7 @@ from tests import test_question_like_questionId
 from tests import test_question_dislike_questionId
 from tests import test_recommend_developer
 from tests import test_about_recommend_developer
+from tests import test_vacancyid
 from environment import yaml_environment
 import allure
 
@@ -797,6 +798,13 @@ class Test():
         test_about_recommend_developer.TestAboutRecomendDeveloper(
             self.environment_adapter).request().test()
 
+    @ allure.title("Получить Вакансию")
+    @ allure.description("Получить Вакансию")
+    @ allure.severity("Minor")
+    def test_vacancyid(self):
+        test_vacancyid.TestVacancyId(
+            self.environment_adapter).request().test()
+
     @ allure.title("Удаление пользователя")
     @ allure.description("Удаление пользователя")
     @ allure.severity("Critical")
@@ -804,8 +812,8 @@ class Test():
         test_delete_user.TestDeleteUser(
             self.environment_adapter).request().rewrite_token().test()
 
-    @allure.title("Разделы каталога")
-    @allure.description("Разделы каталога")
-    def test_catalog_sections(self):
-        test_catalog_sections.TestCatalogSections(
-            self.environment_adapter).request().print_json_response()
+    # @allure.title("Разделы каталога")
+    # @allure.description("Разделы каталога")
+    # def test_catalog_sections(self):
+        # test_catalog_sections.TestCatalogSections(
+        # self.environment_adapter).request().print_json_response()
