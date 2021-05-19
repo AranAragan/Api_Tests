@@ -1,6 +1,6 @@
 import json
-import requests
 import allure
+import requests
 from urllib.parse import unquote
 
 
@@ -15,7 +15,7 @@ class TestBase:
     def __init__(self, environment_adapter):
         self.environment_adapter = environment_adapter
         self.environment = environment_adapter.get()
-        self.variables = self.environment["variables"]
+        self.initVariables()
 
     def request(self):
         self.response = requests.request(
@@ -31,14 +31,17 @@ class TestBase:
     def get_json_result(self):
         return self.get_json()["result"]
 
-    def set_variables(self, variables):
+    def initVariables(self):
+        self.variables = self.environment["variables"]
         if not self.variables:
             self.variables = {}
+        key = self.__class__.__name__
+        if key not in self.variables:
+            self.variables[key] = {}
+
+    def set_variables(self, variables):
         for variable in variables:
-            key = self.__class__.__name__
-            if key not in self.variables:
-                self.variables[key] = {}
-            self.variables[key][list(variable.keys()).pop()] = list(
+            self.variables[self.__class__.__name__][list(variable.keys()).pop()] = list(
                 variable.values()).pop()
         self.environment["variables"] = self.variables
         return self
@@ -54,6 +57,10 @@ class TestBase:
         return self
 
     def attach(self):
+        allure.attach(unquote(self.response.request.url), "Request url",
+                      allure.attachment_type.TEXT)
+        allure.attach(self.response.request.method,
+                      "Request method", allure.attachment_type.TEXT)
         requestHeaders = self.response.request.headers
         if requestHeaders:
             allure.attach(json.dumps(dict(requestHeaders), indent=4,

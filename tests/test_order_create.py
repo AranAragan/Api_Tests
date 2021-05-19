@@ -17,6 +17,6 @@ class TestOrderCreate(test_base.TestBase):
 
     def assert_set_variables(self):
         self.set_variables([
-            {'ORDER_ID': self.get_json_result()["ID"]}
+            {'ORDER_ID': self.get_json_result()["ORDER_ID"]}
         ])
         return self

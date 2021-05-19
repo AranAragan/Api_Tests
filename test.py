@@ -106,6 +106,7 @@ from tests import test_question_dislike_questionId
 from tests import test_recommend_developer
 from tests import test_about_recommend_developer
 from tests import test_vacancyid
+from tests import test_order_cancel
 from environment import yaml_environment
 import allure
 
@@ -282,12 +283,6 @@ class Test():
     @allure.description("Получить все ссылки")
     def test_catalog_paths(self):
         test_catalog_paths.TestCatalogPaths(
-            self.environment_adapter).request().attach().test()
-
-    @allure.title("Получить заказы")
-    @allure.description("Получить заказы")
-    def test_user_orders(self):
-        test_user_orders.TestUserOrders(
             self.environment_adapter).request().attach().test()
 
     @allure.title("Проверка существования Пользователя")
@@ -574,6 +569,12 @@ class Test():
         test_order_oneclick.TestOrderOneclick(
             self.environment_adapter).request().attach().test()
 
+    @allure.title("Получить заказы")
+    @allure.description("Получить заказы")
+    def test_user_orders(self):
+        test_user_orders.TestUserOrders(
+            self.environment_adapter).request().attach().test()
+
     # @allure.title("Добавить отзыв")
     # @allure.description("Добавить отзыв")
     # @allure.severity("Minor")
@@ -803,6 +804,13 @@ class Test():
     @allure.severity("Minor")
     def test_vacancyid(self):
         test_vacancyid.TestVacancyId(
+            self.environment_adapter).request().attach().test()
+
+    @allure.title("Отменить Заказ")
+    @allure.description("Отменить Заказ")
+    @allure.severity("Minor")
+    def test_order_cancel(self):
+        test_order_cancel.TestOrderCancel(
             self.environment_adapter).request().attach().test()
 
     @allure.title("Удаление пользователя")
