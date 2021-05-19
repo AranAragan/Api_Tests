@@ -12,7 +12,7 @@ class TestRecommendDeveloper(test_base.TestBase):
                 "user_phone": "79996666666",
                 "user_email": "test1101111@yandex.ru",
                 "candidate_profile": "www.05.ru",
-                "candidate_name": "Test",
-                "candidate_phone": "79996666666"
+                "candidate_name": "Tester",
+                "candidate_phone": "79996666777"
             })
         return self

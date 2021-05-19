@@ -1,4 +1,7 @@
+import json
 import requests
+import allure
+from urllib.parse import unquote
 
 
 class TestBase:
@@ -48,6 +51,23 @@ class TestBase:
 
     def test(self):
         assert self.response.status_code == 200
+        return self
+
+    def attach(self):
+        requestHeaders = self.response.request.headers
+        if requestHeaders:
+            allure.attach(json.dumps(dict(requestHeaders), indent=4,
+                          ensure_ascii=False), "Request headers", allure.attachment_type.JSON)
+        responseHeaders = self.response.headers
+        if responseHeaders:
+            allure.attach(json.dumps(dict(responseHeaders), indent=4,
+                                     ensure_ascii=False), "Response headers", allure.attachment_type.JSON)
+        responseJson = self.get_json()
+        if responseJson:
+            allure.attach(json.dumps(responseJson, indent=4,
+                                     ensure_ascii=False), "Response", allure.attachment_type.JSON)
+        if self.response.request.body:
+            allure.attach(unquote(self.response.request.body), "Body")
         return self
 
     def rewrite_token(self):
