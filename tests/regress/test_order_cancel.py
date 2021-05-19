@@ -1,5 +1,5 @@
 from tests import test_base
-from tests import test_order_create
+from tests.regress import test_order_create
 import requests
 
 
