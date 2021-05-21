@@ -220,17 +220,17 @@ class Test():
         test_catalog_products_viewed.TestCatalogProductsViewed(
             self.environment_adapter).request().attach().test()
 
-    @allure.title("Добавить отзыв")
-    @allure.description("Добавить отзыв")
-    def test_review_product(self):
-        test_review_product.TestReviewProduct(
-            self.environment_adapter).request().attach().test()
+    # @allure.title("Добавить отзыв")
+    # @allure.description("Добавить отзыв")
+    # def test_review_product(self):
+    #     test_review_product.TestReviewProduct(
+    #         self.environment_adapter).request().attach().test()
 
-    @allure.title("Добавить вопрос")
-    @allure.description("Добавить вопрос")
-    def test_question(self):
-        test_question.TestQuetion(
-            self.environment_adapter).request().attach().test()
+    # @allure.title("Добавить вопрос")
+    # @allure.description("Добавить вопрос")
+    # def test_question(self):
+    #     test_question.TestQuetion(
+    #         self.environment_adapter).request().attach().test()
 
     @allure.title("Карточка товара")
     @allure.description("Карточка товара")
