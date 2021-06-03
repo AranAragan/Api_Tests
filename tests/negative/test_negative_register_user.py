@@ -8,12 +8,12 @@ class TestNegativeRegisterUser(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "name": " ",
-                "last_name": " ",
-                "second_name": " ",
+                "name": self.faker.first_name(),
+                "last_name": self.faker.user_name(),
+                "second_name": self.faker.last_name(),
                 "confirm_code": "111111",
-                "password": "1",
-                "email": "test1101111_yandex.ru"
+                "password": self.faker.password(length=4),
+                "email": self.faker.company_email()
             })
         return self
 

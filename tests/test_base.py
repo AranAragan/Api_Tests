@@ -10,11 +10,13 @@ class TestBase:
     variables = None
     response = None
     errors = None
+    faker = None
     path = None
 
-    def __init__(self, environment_adapter):
+    def __init__(self, environment_adapter, faker):
         self.environment_adapter = environment_adapter
         self.environment = environment_adapter.get()
+        self.faker = faker
         self.initVariables()
 
     def request(self):

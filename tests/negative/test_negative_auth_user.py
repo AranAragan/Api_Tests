@@ -11,8 +11,8 @@ class TestNegativeAuthUser(test_base.TestBase):
                 "grant_type": "password",
                 "client_id": self.environment["client_id"],
                 "client_secret": self.environment["client_secret"],
-                "username": "79996666667",
-                'password': "222222"
+                "username": self.faker.user_name(),
+                'password': self.faker.password()
             })
         return self
 

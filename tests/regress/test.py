@@ -141,15 +141,15 @@ class Test():
         test_register_user.TestRegisterUser(
             self.environment_adapter).request().rewrite_token().rewrite_environment().attach().test()
 
-    @allure.title("Восстановление пароля")
-    @allure.description("Восстановление пароля")
+    @allure.title("Авторизация пользователя")
+    @allure.description("Авторизация пользователя")
     @allure.severity("Blocker")
     def test_auth_user(self):
         test_auth_user.TestAuthUser(
             self.environment_adapter).request().rewrite_token().rewrite_environment().attach().test()
 
-    @allure.title("Проверка кода подтверждения")
-    @allure.description("Проверка кода подтверждения")
+    @allure.title("Отправка кода подтверждения")
+    @allure.description("Отправка кода подтверждения")
     def test_recover_send(self):
         test_recover_send.TestRecoverSend(
             self.environment_adapter).request().attach().test()
@@ -444,8 +444,8 @@ class Test():
         test_bonus_code_send.TestBonusCodeSend(
             self.environment_adapter).request().attach().test()
 
-    @allure.title("Отправить код Бонустная карта")
-    @allure.description("Отправить код Бонусная карта")
+    @allure.title("Получить карточку бренда")
+    @allure.description("Получить карточку бренда")
     @allure.severity("Minor")
     def test_brand(self):
         test_brand.TestBrand(
@@ -611,19 +611,19 @@ class Test():
         test_vacancy.TestVacancy(
             self.environment_adapter).request().attach().test()
 
-    @allure.title("Оптовики")
-    @allure.description("Оптовики")
-    @allure.severity("Minor")
-    def test_wholesaler(self):
-        test_wholesaler.TestWholesaler(
-            self.environment_adapter).request().attach().test()
+    # @allure.title("Оптовики")
+    # @allure.description("Оптовики")
+    # @allure.severity("Minor")
+    # def test_wholesaler(self):
+        # test_wholesaler.TestWholesaler(
+        # self.environment_adapter).request().attach().test()
 
-    @allure.title("Поставщики")
-    @allure.description("Поставщики")
-    @allure.severity("Minor")
-    def test_provider(self):
-        test_provider.TestProvider(
-            self.environment_adapter).request().attach().test()
+    # @allure.title("Поставщики")
+    # @allure.description("Поставщики")
+    # @allure.severity("Minor")
+    # def test_provider(self):
+        # test_provider.TestProvider(
+        # self.environment_adapter).request().attach().test()
 
     @allure.title("Получить список магазинов")
     @allure.description("Получить список магазинов")

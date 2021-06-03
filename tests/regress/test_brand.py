@@ -3,4 +3,4 @@ import requests
 
 
 class TestBrand(test_base.TestBase):
-    path = "/brand/255457"
+    path = "/brand/acer"
