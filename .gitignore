@@ -1,4 +1,6 @@
 *.pyc
 *.yml
 *.yaml
-results
+userdata/results
+userdata/jenkins_home/*
+!userdata/jenkins_home/.gitkeep
