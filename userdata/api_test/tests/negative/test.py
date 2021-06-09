@@ -9,7 +9,7 @@ from environment import yaml_environment
 
 class Test():
     environment_adapter = yaml_environment.yaml_environment(
-        "environment/test_negative_environment.yml")
+        "/environment/test_negative_environment.yml")
     faker = Faker()
 
     @allure.title("Отправка кода подтверждения")
