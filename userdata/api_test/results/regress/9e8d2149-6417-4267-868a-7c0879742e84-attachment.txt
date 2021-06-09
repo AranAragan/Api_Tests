@@ -1,1 +1,0 @@
-https://test.05.ru/api/v2/user/recover/send/79996666666

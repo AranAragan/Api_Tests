@@ -1,1 +1,0 @@
-https://test.05.ru/api/v2/favorite/598680?show_entity=598682
