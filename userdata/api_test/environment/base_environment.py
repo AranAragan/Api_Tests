@@ -22,7 +22,7 @@ class BaseEnvironment:
 
     def get_token(self):
         return requests.request(
-            method="POST", url=self.environment["host"] + "/oauth/token", headers=self.environment["headers"], data={
+            method="POST", url=self.environment["host"] + "/oauth/token", data={
                 "grant_type": "client_credentials",
                 "client_id": self.environment["client_id"],
                 "client_secret": self.environment["client_secret"],
