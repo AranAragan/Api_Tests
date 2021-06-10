@@ -17,7 +17,7 @@ class TestBase:
         self.environment_adapter = environment_adapter
         self.environment = environment_adapter.get()
         self.faker = faker
-        self.initVariables()
+        self.init_variables()
 
     def request(self):
         self.response = requests.request(
@@ -33,13 +33,14 @@ class TestBase:
     def get_json_result(self):
         return self.get_json()["result"]
 
-    def initVariables(self):
+    def init_variables(self):
         self.variables = self.environment["variables"]
         if not self.variables:
             self.variables = {}
         key = self.__class__.__name__
         if key not in self.variables:
             self.variables[key] = {}
+        return self
 
     def set_variables(self, variables):
         for variable in variables:
