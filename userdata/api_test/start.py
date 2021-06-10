@@ -4,7 +4,7 @@ import pathlib
 import subprocess
 
 os.chdir(pathlib.Path(__file__).parent)
-shutil.rmtree("result", True)
+shutil.rmtree("/result/", True)
 subprocess.Popen(
     "python -m pytest -s /api_test/tests/negative/test.py --alluredir /result/negative", shell=True).wait()
 subprocess.Popen("allure serve /result/negative",
