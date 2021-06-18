@@ -1,7 +1,9 @@
+*.env
 *.pyc
 *.yml
 *.yaml
 !docker-compose.yml
-userdata/result
+userdata/result/*
+!userdata/result/.gitkeep
 userdata/jenkins_home/*
 !userdata/jenkins_home/.gitkeep

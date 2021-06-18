@@ -1,10 +1,10 @@
 version: "3"
 
-services: 
+services:
     jenkins:
         build: ./modules/jenkins
         container_name: api-test-jenkins
-        volumes: 
+        volumes:
             - ./userdata/result:/result:consistent
             - ./userdata/jenkins_home:/var/jenkins_home:consistent
             - ./userdata/environment:/environment

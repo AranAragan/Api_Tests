@@ -17,4 +17,6 @@ RUN apt-get update -y \
     && rm allure.zip \
     && ln -s /opt/allure/allure-2.14.0/bin/allure /usr/bin/allure
 
-CMD tail -f /dev/null
+COPY server.py server.py
+
+CMD python -m server.py
