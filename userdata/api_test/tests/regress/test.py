@@ -112,6 +112,8 @@ from tests.regress import test_recommend_developer
 from tests.regress import test_about_recommend_developer
 from tests.regress import test_vacancyid
 from tests.regress import test_order_cancel
+from tests.regress import test_releases_list
+from tests.regress import test_get_releases
 from environment import yaml_environment
 
 
@@ -816,6 +818,20 @@ class Test():
     @allure.severity("Minor")
     def test_order_cancel(self):
         test_order_cancel.TestOrderCancel(
+            self.environment_adapter, self.faker).request().attach().test()
+
+    @allure.title("Получить список - Релизы")
+    @allure.description("Получить список - Релизы")
+    @allure.severity("Minor")
+    def test_releases_list(self):
+        test_releases_list.TestReleasesList(
+            self.environment_adapter, self.faker).request().attach().test()
+
+    @allure.title("Получить релиз")
+    @allure.description("Получить релиз")
+    @allure.severity("Minor")
+    def test_get_releases(self):
+        test_get_releases.TestGetReleases(
             self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Удаление пользователя")

@@ -3,7 +3,7 @@ import requests
 
 
 class TestReviewDislike(test_base.TestBase):
-    path = "/review/dislike/111?show_entity=возврат_объекта"
+    path = "/review/dislike/150?show_entity=возврат_объекта"
 
     def request(self):
         self.response = requests.request(
