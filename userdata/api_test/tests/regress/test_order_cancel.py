@@ -4,7 +4,7 @@ import requests
 
 
 class TestOrderCancel(test_base.TestBase):
-    path = "/order/{orderId}/cancel?reason=тест&show_entity=тест"
+    path = "/order/{orderId}/cancel?reason=тест&show_entity=тест&comment=Тест"
 
     def request(self):
         self.response = requests.request(method="DELETE", url=self.environment["host"] + self.path.format(

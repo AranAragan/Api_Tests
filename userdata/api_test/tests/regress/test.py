@@ -377,11 +377,11 @@ class Test():
         test_location.TestLocations(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Отправить жалобу")
-    @allure.description("Отправить жалобу")
-    def test_complaint(self):
-        test_complaint.TestComplaint(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Отправить жалобу")
+    # @allure.description("Отправить жалобу")
+    # def test_complaint(self):
+        # test_complaint.TestComplaint(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Популярные поисковые фразы")
     @allure.description("Популярные поисковые фразы")
@@ -401,11 +401,11 @@ class Test():
         test_installment.TestInstallment(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Нашли ошибку?")
-    @allure.description("Нашли ошибку?")
-    def test_feedbacks(self):
-        test_feedbacks.TestFeedbacks(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Нашли ошибку?")
+    # @allure.description("Нашли ошибку?")
+    # def test_feedbacks(self):
+        # test_feedbacks.TestFeedbacks(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Запрос обратной связи")
     @allure.description("Запрос обратной связи")
@@ -666,26 +666,26 @@ class Test():
         # test_bonus_physical.TestBonusPhysical(
         # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Добавить комментарий")
-    @allure.description("Добавить комментарий")
-    @allure.severity("Minor")
-    def test_review_comment(self):
-        test_review_comment.TestReviewComment(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Добавить комментарий")
+    # @allure.description("Добавить комментарий")
+    # @allure.severity("Minor")
+    # def test_review_comment(self):
+        # test_review_comment.TestReviewComment(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Нравится комментарий")
-    @allure.description("Нравится комментарий")
-    @allure.severity("Minor")
-    def test_review_comment_like(self):
-        test_review_comment_like.TestReviewCommentLike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Нравится комментарий")
+    # @allure.description("Нравится комментарий")
+    # @allure.severity("Minor")
+    # def test_review_comment_like(self):
+        # test_review_comment_like.TestReviewCommentLike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Не нравится комментарий")
-    @allure.description("Не нравится комментарий")
-    @allure.severity("Minor")
-    def test_review_comment_dislike(self):
-        test_review_comment_dislike.TestReviewCommentDislike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Не нравится комментарий")
+    # @allure.description("Не нравится комментарий")
+    # @allure.severity("Minor")
+    # def test_review_comment_dislike(self):
+        # test_review_comment_dislike.TestReviewCommentDislike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Получить поля комментарий")
     @allure.description("Получить поля комментарий")
@@ -694,12 +694,12 @@ class Test():
         test_review_comment_fields.TestReviewCommentFields(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Получить комментарии")
-    @allure.description("Получить комментарии")
-    @allure.severity("Minor")
-    def test_reviewId_comments(self):
-        test_reviewId_comments.TestReviewidComments(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Получить комментарии")
+    # @allure.description("Получить комментарии")
+    # @allure.severity("Minor")
+    # def test_reviewId_comments(self):
+        # test_reviewId_comments.TestReviewidComments(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Получить отзывы и комментарии товара")
     @allure.description("Получить отзывы и комментарии товара")
@@ -715,40 +715,40 @@ class Test():
         test_review_fields.TestReviewFields(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Нравится - Комментарии")
-    @allure.description("Нравится - Комментарии")
-    @allure.severity("Minor")
-    def test_review_like(self):
-        test_review_like.TestReviewLike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Нравится - Комментарии")
+    # @allure.description("Нравится - Комментарии")
+    # @allure.severity("Minor")
+    # def test_review_like(self):
+        # test_review_like.TestReviewLike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Не нравится - Комментарии")
-    @allure.description("Не нравится - Комментарии")
-    @allure.severity("Minor")
-    def test_review_dislike(self):
-        test_review_dislike.TestReviewDislike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Не нравится - Комментарии")
+    # @allure.description("Не нравится - Комментарии")
+    # @allure.severity("Minor")
+    # def test_review_dislike(self):
+        # test_review_dislike.TestReviewDislike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Добавить ответ")
-    @allure.description("Добавить ответ")
-    @allure.severity("Minor")
-    def test_question_answer(self):
-        test_question_answer.TestQuestionAnswer(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Добавить ответ")
+    # @allure.description("Добавить ответ")
+    # @allure.severity("Minor")
+    # def test_question_answer(self):
+        # test_question_answer.TestQuestionAnswer(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Нравится ответ")
-    @allure.description("Нравится ответ")
-    @allure.severity("Minor")
-    def test_question_answer_like(self):
-        test_question_answer_like.TestQuestionAnswerLike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Нравится ответ")
+    # @allure.description("Нравится ответ")
+    # @allure.severity("Minor")
+    # def test_question_answer_like(self):
+        # test_question_answer_like.TestQuestionAnswerLike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Не нравится ответ")
-    @allure.description("Не нравится ответ")
-    @allure.severity("Minor")
-    def test_question_answer_dislike(self):
-        test_question_answer_dislike.TestQuestionAnswerDislike(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Не нравится ответ")
+    # @allure.description("Не нравится ответ")
+    # @allure.severity("Minor")
+    # def test_question_answer_dislike(self):
+        # test_question_answer_dislike.TestQuestionAnswerDislike(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Получить ответы - Ответ")
     @allure.description("Получить ответы - Ответ")
@@ -778,26 +778,26 @@ class Test():
         test_question_fields.TestQuestionFields(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Нравится Ответ")
-    @allure.description("Нравится Ответ")
-    @allure.severity("Minor")
-    def test_question_like_questionId(self):
-        test_question_like_questionId.TestQuestionLikeQuestionId(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Нравится Ответ")
+    # @allure.description("Нравится Ответ")
+    # @allure.severity("Minor")
+    # def test_question_like_questionId(self):
+        # test_question_like_questionId.TestQuestionLikeQuestionId(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Не нравится Ответ")
-    @allure.description("Не нравится Ответ")
-    @allure.severity("Minor")
-    def test_question_dislike_questionId(self):
-        test_question_dislike_questionId.TestQuestionDislikeQuestionId(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Не нравится Ответ")
+    # @allure.description("Не нравится Ответ")
+    # @allure.severity("Minor")
+    # def test_question_dislike_questionId(self):
+        # test_question_dislike_questionId.TestQuestionDislikeQuestionId(
+        # self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Рекомендация разработчика")
-    @allure.description("Рекомендация разработчика")
-    @allure.severity("Minor")
-    def test_recommend_developer(self):
-        test_recommend_developer.TestRecommendDeveloper(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Рекомендация разработчика")
+    # @allure.description("Рекомендация разработчика")
+    # @allure.severity("Minor")
+    # def test_recommend_developer(self):
+        # test_recommend_developer.TestRecommendDeveloper(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Вакансии для рекомендации разработчика")
     @allure.description("Вакансии для рекомендации разработчика")

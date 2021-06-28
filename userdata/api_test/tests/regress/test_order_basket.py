@@ -8,7 +8,7 @@ class TestOrderBasket(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "product_id": "1001804",
+                "product_id": "624309",
                 "quantity": "2"
             })
         return self
