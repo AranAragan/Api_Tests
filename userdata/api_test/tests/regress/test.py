@@ -1,7 +1,6 @@
 import allure
 from faker import Faker
 from pathlib import Path
-
 import faker
 from tests.regress import test_register_code
 from tests.regress import test_register_user
@@ -114,6 +113,9 @@ from tests.regress import test_vacancyid
 from tests.regress import test_order_cancel
 from tests.regress import test_releases_list
 from tests.regress import test_get_releases
+from tests.regress import test_pcbuild
+from tests.regress import test_pcbuild_scheme
+from tests.regress import test_pcbuild_components
 from environment import yaml_environment
 
 
@@ -833,6 +835,27 @@ class Test():
     def test_get_releases(self):
         test_get_releases.TestGetReleases(
             self.environment_adapter, self.faker).request().attach().test()
+
+    @allure.title("Получить сборку конфигуратора сборок")
+    @allure.description("Получить сборку конфигуратора сборок")
+    @allure.severity("Minor")
+    def test_pcbuild(self):
+        test_pcbuild.TestPcbuild(
+            self.environment_adapter, self.faker).request().attach().test()
+
+    @allure.title("Получить структуру конфигуратора сборок")
+    @allure.description("Получить структуру конфигуратора сборок")
+    @allure.severity("Minor")
+    def test_pcbuild_scheme(self):
+        test_pcbuild_scheme.TestPcbuildScheme(
+            self.environment_adapter, self.faker).request().attach().test()
+
+    # @allure.title("Сохранить сборку конфигуратора сборок")
+    # @allure.description("Сохранить сборку конфигуратора сборок")
+    # @allure.severity("Minor")
+    # def test_pcbuild_components(self):
+        # test_pcbuild_components.TestPcbuildComponents(
+        # self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Удаление пользователя")
     @allure.description("Удаление пользователя")

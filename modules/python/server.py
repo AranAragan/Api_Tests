@@ -1,17 +1,21 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import subprocess
 import json
+import os
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         post_data = self.rfile.read(int(self.headers['Content-Length']))
         commands = json.loads(post_data)
-        results = []
         for command in commands:
-            results.append(subprocess.Popen(command, shell=True).wait())
-        self.send_response(200)
+            process = subprocess.Popen(command, shell=True)
+            process.wait()
+        self.send_response(int(os.environ["SUCCESS"]))
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
 
 
-with HTTPServer(('', 80), Handler) as server:
+os.chdir(os.environ["DIRECTORY"])
+with HTTPServer(('', int(os.environ["PORT"])), Handler) as server:
     server.serve_forever()

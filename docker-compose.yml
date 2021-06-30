@@ -5,7 +5,7 @@ services:
         build: ./modules/jenkins
         container_name: api-test-jenkins
         volumes:
-            - ./userdata/result:/result:consistent
+            - ./userdata/result:/var/jenkins_home/workspace:consistent
             - ./userdata/jenkins_home:/var/jenkins_home:consistent
             - ./userdata/environment:/environment
         ports:
@@ -13,6 +13,11 @@ services:
     python:
         build: ./modules/python
         container_name: api-test-python
+        environment:
+            DIRECTORY: /api_test
+            SUCCESS: 200
+            ERROR: 424
+            PORT: 80
         volumes:
             - ./userdata/api_test:/api_test:consistent
             - ./userdata/result:/result:consistent
