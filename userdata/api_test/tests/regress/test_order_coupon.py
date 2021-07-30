@@ -3,7 +3,7 @@ import requests
 
 
 class TestOrderCoupon(test_base.TestBase):
-    path = "/order/coupon/SL-4JPWV-18GVF9B"
+    path = "/order/coupon/vigodno10"
 
     def request(self):
         self.response = requests.request(

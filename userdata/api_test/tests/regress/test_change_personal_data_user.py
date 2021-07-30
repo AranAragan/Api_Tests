@@ -12,6 +12,6 @@ class TestChangePersonalDataUser(test_base.TestBase):
                 "name": "Testor",
                 "second_name": "Testonyo",
                 "confirm_code": "111111",
-                "password": "111111"
+                "password": "11111111"
             })
         return self

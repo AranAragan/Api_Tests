@@ -8,7 +8,7 @@ class TestRecoverChange(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "password": "111111",
+                "password": "11111111",
                 "confirm_code": "111111"
 
             })

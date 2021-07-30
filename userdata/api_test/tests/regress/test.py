@@ -2,6 +2,7 @@ import allure
 from faker import Faker
 from pathlib import Path
 import faker
+import testit
 from tests.regress import test_register_code
 from tests.regress import test_register_user
 from tests.regress import test_home_screen
@@ -186,8 +187,9 @@ class Test():
         test_personal_area.TestPersonalArea(
             self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
 
-    @allure.title("Добавить в избранное")
-    @allure.description("Добавить в избранное")
+    @testit.workItemID(1359)
+    @testit.displayName('Добавление в избранное - 1')
+    @testit.externalID('Добавление в избранное')
     def test_favorite_product(self):
         test_favorite_product.TestFavoriteProduct(
             self.environment_adapter, self.faker).request().attach().test()
@@ -864,8 +866,8 @@ class Test():
         test_delete_user.TestDeleteUser(
             self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
 
-    # @allure.title("Разделы каталога")
-    # @allure.description("Разделы каталога")
-    # def test_catalog_sections(self):
-        # test_catalog_sections.TestCatalogSections(
-        # self.environment_adapter, self.faker).request().print_json_response()
+    @allure.title("Разделы каталога")
+    @allure.description("Разделы каталога")
+    def test_catalog_sections(self):
+        test_catalog_sections.TestCatalogSections(
+            self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()

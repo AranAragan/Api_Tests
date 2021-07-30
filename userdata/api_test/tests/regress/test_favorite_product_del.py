@@ -3,7 +3,7 @@ import requests
 
 
 class TestFavoriteProductDel(test_base.TestBase):
-    path = "/favorite/598680?show_entity=возврат_добавленного_товара"
+    path = "/favorite/623277?show_entity=возврат_добавленного_товара"
 
     def request(self):
         self.response = requests.request(
