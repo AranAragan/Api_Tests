@@ -3,6 +3,7 @@ from faker import Faker
 from pathlib import Path
 import faker
 import testit
+import time
 from tests.regress import test_register_code
 from tests.regress import test_register_user
 from tests.regress import test_home_screen
@@ -188,7 +189,7 @@ class Test():
             self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
 
     @testit.workItemID(1359)
-    @testit.displayName('Добавление в избранное - 1')
+    @testit.displayName('Добавление в избранное')
     @testit.externalID('Добавление в избранное')
     def test_favorite_product(self):
         test_favorite_product.TestFavoriteProduct(
@@ -435,11 +436,11 @@ class Test():
         test_reg_bonus.TestRegBonus(
             self.environment_adapter, self.faker).request().attach().test()
 
-    @allure.title("Получить информацию о бонусной карте")
-    @allure.description("Получить информацию о бонусной карте")
-    def test_bonus_info(self):
-        test_bonus_info.TestBonusInfo(
-            self.environment_adapter, self.faker).request().attach().test()
+    # @allure.title("Получить информацию о бонусной карте")
+    # @allure.description("Получить информацию о бонусной карте")
+    # def test_bonus_info(self):
+    #     test_bonus_info.TestBonusInfo(
+    #         self.environment_adapter, self.faker).request().attach().test()
 
     @allure.title("Получить поля о бонусной карте")
     @allure.description("Получить поля о бонусной карте")
@@ -866,8 +867,8 @@ class Test():
         test_delete_user.TestDeleteUser(
             self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
 
-    @allure.title("Разделы каталога")
-    @allure.description("Разделы каталога")
-    def test_catalog_sections(self):
-        test_catalog_sections.TestCatalogSections(
-            self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
+    # @allure.title("Разделы каталога")
+    # @allure.description("Разделы каталога")
+    # def test_catalog_sections(self):
+    #     test_catalog_sections.TestCatalogSections(
+    #         self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()

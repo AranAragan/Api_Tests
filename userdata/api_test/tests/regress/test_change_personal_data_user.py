@@ -11,7 +11,7 @@ class TestChangePersonalDataUser(test_base.TestBase):
                 "last_name": "Testun",
                 "name": "Testor",
                 "second_name": "Testonyo",
-                "confirm_code": "111111",
+                "confirm_code": self.environment["custom_variables"]["confirm_code"],
                 "password": "11111111"
             })
         return self

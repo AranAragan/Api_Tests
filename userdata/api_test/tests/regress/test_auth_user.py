@@ -9,9 +9,9 @@ class TestAuthUser(test_base.TestBase):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
                 "grant_type": "password",
-                "client_id": "main",
-                "client_secret": "ac178876-b829-11e9-b8c8-ac1f6b94fd9c",
-                "username": "79996666666",
-                'password': "111111"
+                "client_id": self.environment["client_id"],
+                "client_secret": self.environment["client_secret"],
+                "username": self.environment["custom_variables"]["number"],
+                'password': self.environment["custom_variables"]["password"]
             })
         return self

@@ -3,9 +3,10 @@ import requests
 
 
 class TestDelCompareSection(test_base.TestBase):
-    path = "/compare/section/598682/598682"
+    path = "/compare/section/{compare_sections}/{compare_sections}"
 
     def request(self):
         self.response = requests.request(
-            method="DELETE", url=self.environment["host"] + self.path, headers=self.environment["headers"])
+            method="DELETE", url=self.environment["host"] + self.path.format(
+                compare_sections=self.environment["custom_variables"]["compare_sections"]), headers=self.environment["headers"])
         return self

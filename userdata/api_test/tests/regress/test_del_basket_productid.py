@@ -3,10 +3,11 @@ import requests
 
 
 class TestDelBasketProductId(test_base.TestBase):
-    path = "/basket/638805?total=1"
+    path = "/basket/{basket_productid}?total=1"
 
     def request(self):
         self.response = requests.request(
-            method="DELETE", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
+            method="DELETE", url=self.environment["host"] + self.path.format(
+                basket_productid=self.environment["custom_variables"]["basket_productid"]), headers=self.environment["headers"], data={
             })
         return self
