@@ -9,9 +9,9 @@ class TestQuestionAnswer(test_base.TestBase):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
                 "product_id": "748",
-                "entity_id": "Testo666",
-                "user_name": "Testo",
-                "user_email": "test1101111@yandex.ru",
-                "text": "Test"
+                "entity_id": self.environment["custom_variables"]["name"],
+                "user_name": self.environment["custom_variables"]["name"],
+                "user_email": self.environment["custom_variables"]["user_email"],
+                "text": self.environment["custom_variables"]["name"]
             })
         return self
