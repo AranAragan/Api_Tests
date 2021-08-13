@@ -10,8 +10,8 @@ class TestReviewComment(test_base.TestBase):
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
                 "product_id": "748",
                 "entity_id": "111",
-                "user_name": "testo",
-                "user_email": "test1101111@yandex.ru",
-                "text": "Test"
+                "user_name": self.environment["custom_variables"]["user_name"],
+                "user_email": self.environment["custom_variables"]["user_email"],
+                "text": self.environment["custom_variables"]["user_name"]
             })
         return self

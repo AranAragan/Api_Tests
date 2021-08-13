@@ -3,9 +3,10 @@ import requests
 
 
 class TestRegBonus(test_base.TestBase):
-    path = "/bonus?name=Test&last_name=Testov&second_name=Testovich"
+    path = "/bonus?name={user_name}&last_name={user_name}&second_name={user_name}"
 
     def request(self):
         self.response = requests.request(
-            method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"])
+            method="POST", url=self.environment["host"] + self.path.format(
+                user_name=self.environment["custom_variables"]["user_name"]), headers=self.environment["headers"])
         return self

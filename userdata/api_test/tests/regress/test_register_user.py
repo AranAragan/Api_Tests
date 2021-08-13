@@ -8,11 +8,11 @@ class TestRegisterUser(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "name": "TEST",
-                "last_name": "TESTOV",
-                "second_name": "TESTOVICH",
-                "confirm_code": "111111",
-                "password": "111111",
-                "email": "test1101111@yandex.ru"
+                "name": self.environment["custom_variables"]["user_name"],
+                "last_name": self.environment["custom_variables"]["user_name"],
+                "second_name": self.environment["custom_variables"]["user_name"],
+                "confirm_code": self.environment["custom_variables"]["confirm_code"],
+                "password": self.environment["custom_variables"]["password"],
+                "email": self.environment["custom_variables"]["user_email"]
             })
         return self

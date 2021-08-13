@@ -8,9 +8,9 @@ class TestChangePersonalDataUser(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "last_name": "Testun",
-                "name": "Testor",
-                "second_name": "Testonyo",
+                "last_name": self.environment["custom_variables"]["user_name"],
+                "name": self.environment["custom_variables"]["user_name"],
+                "second_name": self.environment["custom_variables"]["user_name"],
                 "confirm_code": self.environment["custom_variables"]["confirm_code"],
                 "password": "11111111"
             })
