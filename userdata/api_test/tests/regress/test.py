@@ -2,8 +2,6 @@ import allure
 from faker import Faker
 from pathlib import Path
 import faker
-import testit
-import time
 from tests.regress import test_register_code
 from tests.regress import test_register_user
 from tests.regress import test_home_screen
@@ -188,9 +186,8 @@ class Test():
         test_personal_area.TestPersonalArea(
             self.environment_adapter, self.faker).request().rewrite_token().rewrite_environment().attach().test()
 
-    @testit.workItemID(1359)
-    @testit.displayName('Добавление в избранное')
-    @testit.externalID('Добавление в избранное')
+    @allure.title('Добавление в избранное')
+    @allure.description('Добавление в избранное')
     def test_favorite_product(self):
         test_favorite_product.TestFavoriteProduct(
             self.environment_adapter, self.faker).request().attach().test()
