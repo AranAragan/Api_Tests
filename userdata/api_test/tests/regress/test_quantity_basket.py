@@ -8,7 +8,7 @@ class TestQuantityBasket(test_base.TestBase):
     def request(self):
         self.response = requests.request(
             method="POST", url=self.environment["host"] + self.path, headers=self.environment["headers"], data={
-                "product_id": "638805",
+                "product_id": self.environment["custom_variables"]["basket_productid"],
                 "quantity": "2"
             })
         return self

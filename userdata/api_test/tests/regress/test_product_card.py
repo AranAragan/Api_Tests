@@ -3,4 +3,4 @@ import requests
 
 
 class TestProductCard(test_base.TestBase):
-    path = "/catalog/products/748"
+    path = "/catalog/products/633990"
